@@ -1,0 +1,553 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    width: 100%;
+    background-color: #000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-height: 500px) {
+    body {
+      margin: 25% 0 25% 0;
+    }
+  }
+  
+  .envelop {
+    width: 15rem;
+    height: 10rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  @media (min-width: 400px) and (max-width: 600px) {
+    .envelop {
+      width: 20rem;
+      height: 15rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop {
+      width: 25rem;
+      height: 20rem;
+    }
+  }
+  @media (min-width: 600px) and (min-height: 600px) {
+    .envelop {
+      bottom: 20%;
+    }
+  }
+  .envelop__front-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    border: 0.35rem solid #967b5c;
+    background-color: #ba9872;
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+  }
+  .envelop__back-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+  }
+  .envelop__up-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+  }
+  .envelop__sticker {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+  }
+  @media (max-width: 400px) {
+    .envelop__sticker {
+      background-size: 1.2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop__sticker {
+      height: 15%;
+    }
+  }
+  .envelop__false-sticker {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+  }
+  @media (max-width: 400px) {
+    .envelop__false-sticker {
+      background-size: 1.2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .envelop__false-sticker {
+      height: 15%;
+    }
+  }
+  .envelop__content {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+  }
+  
+  .love-notes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .note {
+    width: 95%;
+    height: 30%;
+    background-color: #f9f9f9;
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.25s;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .note:nth-child(1) {
+    bottom: 60%;
+  }
+  .note:nth-child(2) {
+    bottom: 40%;
+  }
+  .note:nth-child(3) {
+    bottom: 20%;
+  }
+  .note:hover {
+    cursor: pointer;
+    height: 45%;
+  }
+  .note__text {
+    font-family: "Sofia";
+    padding: 1rem;
+  }
+  .note__text p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  @media (min-width: 300px) and (max-width: 600px) {
+    .note__text p {
+      font-size: 1.025rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .note__text p {
+      font-size: 1.15rem;
+    }
+  }
+  
+  .scissors {
+    cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+  }
+  .scissors:active {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  .button{
+	width: 50px;
+	height: 50px;
+    top:90%;
+    position: fixed;
+	left: 50%;
+	margin-top: -45px;
+	margin-left: -50px;
+	border-radius: 5px;
+	background: none;
+	cursor: pointer;
+	transition: background 0.5s ease;
+}
+.button:hover{
+
+}
+.active#heart:before,.active#heart:after{
+	background: red !important;
+}
+#heart {
+    width: 100px;
+    height: 90px;
+    transition: background 0.5s ease;
+}
+#heart:before,
+#heart:after {
+	transition: background 0.5s ease;
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: rgb(230,230,230);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+/* body {
+    height: 100%;
+    width: 100%;
+    background: #080f1a;
+    overflow: hidden;
+  } */
+  
+  .container {
+    position: absolute;
+    left: 75%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .glass {
+    height: 350px;
+    width: 200px;
+    background: #122139;
+    border-radius: 300px 300px 0px 0px;
+  }
+  .glass:before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    transform-origin: center;
+    border: 10px solid #122139;
+    border-radius: 100%;
+    position: absolute;
+    left: 87px;
+    top: -25px;
+  }
+  .glass:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 250px;
+    background: #a52a2a;
+    top: 100%;
+    left: -13%;
+  }
+  
+  .shine {
+    width: 12px;
+    height: 140px;
+    background: white;
+    opacity: 0.2;
+    position: absolute;
+    left: 85%;
+    top: 80px;
+    border-radius: 100px;
+    z-index: 10;
+  }
+  .shine:before {
+    content: "";
+    width: 12px;
+    height: 20px;
+    position: absolute;
+    background: white;
+    top: 160px;
+    border-radius: 100px;
+  }
+  
+  .petals > div {
+    position: absolute;
+    background: #d52d58;
+    width: 45px;
+    height: 80px;
+    top: 55px;
+    transition: all 0.5s ease-out;
+  }
+  .petals > div:nth-child(1) {
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px #f594b8;
+    left: 80px;
+    top: 60px;
+    background: #d52d58;
+  }
+  .petals > div:nth-child(2), .petals > div:nth-child(4), .petals > div:nth-child(6) {
+    background: #b81b43;
+    left: 60px;
+    border-radius: 0px 30px 0px 30px;
+    transform-origin: bottom right;
+  }
+  .petals > div:nth-child(3), .petals > div:nth-child(5), .petals > div:nth-child(7) {
+    background: #b81b43;
+    left: 100px;
+    border-radius: 30px 0px 30px 0px;
+    transform-origin: bottom left;
+  }
+  .petals > div:nth-child(2) {
+    z-index: 5;
+    background: #ab1a3f;
+    top: 75px;
+    height: 70px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+    animation: bloom2 3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .petals > div:nth-child(3) {
+    z-index: 4;
+    background: #ab1a3f;
+    top: 75px;
+    height: 70px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+    animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+  }
+  .petals > div:nth-child(4) {
+    z-index: 3;
+    background: #b81b43;
+    top: 70px;
+    height: 75px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+    animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+  }
+  .petals > div:nth-child(5) {
+    z-index: 2;
+    background: #b81b43;
+    top: 70px;
+    height: 75px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+    animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+  }
+  .petals > div:nth-child(6) {
+    z-index: 1;
+    background: #c9204b;
+    top: 65px;
+    height: 70px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+    animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+  }
+  .petals > div:nth-child(7) {
+    z-index: 0;
+    background: #c9204b;
+    top: 65px;
+    height: 70px;
+    box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+    animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  .deadPetals > div {
+    position: absolute;
+    background: #d52d58;
+    width: 20px;
+    height: 15px;
+    top: 120px;
+    border-radius: 0px 30px 0px 30px;
+    box-shadow: 0px 0px 30px rgba(245, 148, 184, 0.5);
+    transition: all 0.5s ease-out;
+  }
+  .deadPetals > div:nth-child(1) {
+    left: 81px;
+    transform: rotate(-30deg);
+    animation: falling 20s 4s ease-in-out infinite;
+  }
+  .deadPetals > div:nth-child(2) {
+    left: 86px;
+    transform: rotate(-30deg);
+    animation: falling 20s 8s ease-in-out infinite;
+  }
+  .deadPetals > div:nth-child(3) {
+    left: 94px;
+    transform: rotate(-30deg);
+    animation: falling 20s 12s ease-in-out infinite;
+  }
+  .deadPetals > div:nth-child(4) {
+    left: 71px;
+    transform: rotate(-30deg);
+    animation: falling 20s 16s ease-in-out infinite;
+  }
+  
+  .leaves > div:nth-last-child(1) {
+    position: absolute;
+    width: 55px;
+    height: 30px;
+    background: #338f37;
+    top: 120px;
+    left: 75px;
+    border-radius: 100px;
+  }
+  .leaves > div:nth-child(1) {
+    position: absolute;
+    width: 6px;
+    height: 210px;
+    background: #054c05;
+    top: 95px;
+    left: 100px;
+    border-radius: 0 0 100px 100px;
+  }
+  .leaves > div:nth-child(2) {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 53px;
+    border-radius: 5px 40px 20px 40px;
+    background: #054c05;
+    transform-origin: bottom;
+    transform: rotate(-30deg);
+    top: 180px;
+    left: 80px;
+    box-shadow: inset 5px 5px #066406;
+  }
+  .leaves > div:nth-child(3) {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    top: 53px;
+    border-radius: 40px 5px 40px 20px;
+    background: #054c05;
+    transform-origin: bottom;
+    transform: rotate(30deg);
+    top: 150px;
+    left: 95px;
+    box-shadow: inset -5px 5px #066406;
+  }
+  
+  .thorns > div {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 140px;
+  }
+  .thorns > div:nth-child(odd) {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #054c05;
+    left: 105px;
+  }
+  .thorns > div:nth-child(even) {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #054c05;
+    left: 95px;
+  }
+  .thorns > div:nth-child(1) {
+    top: 200px;
+  }
+  .thorns > div:nth-child(2) {
+    top: 170px;
+  }
+  .thorns > div:nth-child(4) {
+    top: 230px;
+  }
+  
+  @keyframes bloom2 {
+    50% {
+      transform: rotate(-90deg);
+      top: 200px;
+      left: 100px;
+    }
+    100% {
+      transform: rotate(-60deg);
+      top: 252px;
+      left: 50px;
+      background: #71122a;
+      box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+    }
+  }
+  @keyframes bloom3 {
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes bloom4 {
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  @keyframes bloom5 {
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+  @keyframes bloom6 {
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  @keyframes bloom7 {
+    100% {
+      transform: rotate(5deg);
+    }
+  }
+  @keyframes glowing {
+    50% {
+      background: #d7365f;
+      box-shadow: 0px 0px 60px #f594b8;
+    }
+  }
+  @keyframes falling {
+    20% {
+      top: 335px;
+      background: #9d193b;
+      box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+    }
+    100% {
+      top: 335px;
+      opacity: 0;
+    }
+  }
